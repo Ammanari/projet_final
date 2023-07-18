@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Page de Jeu</title>
+    <style>
+        @keyframes confetti-rise {
+            0% {
+                transform: translateY(100vh);
+            }
+
+            100% {
+                transform: translateY(-100vh);
+            }
+        }
+    </style>
+</head>
+
+<body id="bodyNiveau1">
+        
+    <audio src="music.mp3" autoplay loop controls></audio>
+
+    <h1>Prêt à jouer ?</h1>
+    <a class="btn" href="formulaireNiveau1.php">Commencer</a>
+    <div class="rules">
+        <h2>Règles du jeu</h2>
+        <p>Vous devez répondre aux questions le plus rapidement possible!
+            Ce jeu a été fait dans le cadre du Projet final. Les étudiants ayant
+            travaillé sur ce jeu sont Alexandre Dawood, Alex Gelfant, Martin Aubry et Philippe.
+        </p>
+        <form action="login.php" method="post">
+            <label for="nom">Nom d'utilisateur</label>
+            <input type="text" name="nom" id="nom" required>
+            <label for="password">Mot de passe</label>
+            <input type="password" name="password" id="password" required>
+            <input type="submit" value="Se connecter">
+        </form>
+        <form action="formulaireInscription.php" method="post">
+            <input type="submit" value="S'inscrire">
+        </form>
+        <?php
+        if (isset($_GET['error'])) {
+            echo '<p class="error">Le nom d\'utilisateur ou le mot de passe est incorrect</p>';
+        }
+        ?>
+        <a href="changePassword.php">Mot de passe oublié? Modifiez-le.</a>
+    </div>
+
+
+
+    <script>
+        function changeBackgroundColor() {
+            var colors = ["#7ac0e1", "#e694e6", "#a285df"]; // Liste des couleurs de fond
+            var index = 0;
+            var body = document.getElementsByTagName("body")[0];
+
+            setInterval(function() {
+                body.style.backgroundColor = colors[index];
+                index = (index + 1) % colors.length;
+            }, 3000); // Changer la couleur toutes les 3 secondes (3000 millisecondes)
+        }
+
+        function createConfetti() {
+            var confetti = document.createElement("div");
+            confetti.classList.add("confetti");
+            confetti.style.left = Math.random() * 100 + "vw";
+            confetti.style.animationDelay = Math.random() * 1 + "s"; // Décalage aléatoire de l'animation
+            confetti.style.backgroundColor = getRandomColor(); // Obtenir une couleur aléatoire pour chaque confetti
+            document.body.appendChild(confetti);
+
+
+            setTimeout(function() {
+                confetti.remove();
+            }, 2000); // Supprimer le confetti après 2 secondes (2000 millisecondes)
+        }
+
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function startConfettiAnimation() {
+            setInterval(createConfetti, 100);
+        }
+
+        window.onload = function() {
+            changeBackgroundColor();
+            startConfettiAnimation();
+        };
+    </script>
+
+
+</body>
+
+</html>
