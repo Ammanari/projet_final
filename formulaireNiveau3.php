@@ -39,7 +39,7 @@ if (isset($_SESSION['lastActivity']) && time() - $_SESSION['lastActivity'] > $se
 
         Vie restante : <?php echo getRemainingLives(); ?>
     </p>
-    <audio src="music.mp3" autoplay loop></audio>
+    <audio src="music.mp3" autoplay controls loop></audio>
     <h1 id="h1Jeux"> Niveau 3</h1>
     <p class="rules2">C'est Partis!<br />
         Niveau 3 : Organisez ces 6 Nombres en ordre croissant!<br />
