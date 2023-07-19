@@ -1,0 +1,268 @@
+.hero body {
+	background: #cce6ff;
+	color: #9999ff;
+	font-family: Arial;
+	font-size: 14px;
+	margin: 0;
+	min-width: 960px;
+	padding: 0;
+	transition: background-color 0.5s;
+}
+.hero h1 {
+    margin: 120px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #316ef1;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero h2 {
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ccffff;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+a {
+	outline: none;
+}
+img {
+	border: 0;
+}
+form {
+	margin: 0;
+	padding: 0;
+}
+
+/* HEADER */
+header {
+	background: #99b3ff;
+	width: 100%;
+	vertical-align: middle;
+}
+header nav {
+	margin: 0 auto;
+	overflow: hidden;
+	width: auto;
+}
+header nav ul {
+	float: center;
+	list-style: none;
+	margin: 20px 0 0;
+	overflow: hidden;
+	padding: 0;
+}
+header nav ul li {
+	float: left;
+	padding: 0 5px;
+}
+header nav ul li a {
+	color: #495531;
+	display: block;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	text-decoration: none;
+	width: 90px;
+}
+header nav ul li a:hover {
+	color: #800060;
+}
+
+/* CONTENT */
+
+button {
+	background: #ffccff;
+	border: 1px solid #ffb3ff;
+	border-radius: 1px;
+	height:	26px;
+	color: #0073e6;
+	cursor: pointer;
+	font-weight: bold;
+	margin: 0 0 12px;
+	padding: 3px 6px;
+	text-align: center;
+	text-decoration: none;
+	width: 90px;
+}
+#create-new {
+	background: #fff;
+	border: 1px solid #ffb3ff;
+	border-radius: 1px;
+	padding: 2px;
+	width:auto;
+	font-size:0.85em;
+	margin: 0 0 10px;
+}
+
+div.content {
+	background: #ffccff;
+	padding-bottom: 50px;
+}
+div.content div {
+	margin: 0 auto;
+	width: 960px;
+}
+div.content div h1 {
+	color: #0073e6;
+	font-size: 2em;
+	font-weight: normal;
+	margin: 0;
+	padding: 20px 0 10px;
+}
+div.content div p {
+	color: #b3005c;
+	font-size: 1.2em;
+	line-height: 1.5em;
+	margin: 0;
+	padding: 0 0 20px;
+}
+
+div.content div p::first-letter {
+	font-size: 1.25em;
+	font-weight: bold;
+} 
+
+/* FOOTER */
+footer {
+	text-align: center;
+	color: #333;
+	border-top: 1px solid #a4dd50;
+	padding-top: 20px;
+}
+footer div {
+	margin: 0 auto;
+	overflow: hidden;
+	width: auto;
+}
+
+/* GAME */
+audio {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 150px;
+    height: 30px;
+}
+
+#bodyNiveau1 {
+    text-align: center;
+    overflow: hidden;
+    background-color: #a285df;
+}
+#bodyNiveau2 {
+    text-align: center;
+    overflow: hidden;
+    background-color: #e694e6;
+}
+#bodyNiveau3 {
+    text-align: center;
+    overflow: hidden;
+    background-color: #7ac0e1;
+}
+#bodyNiveau1 h1 {
+    margin-top: 100px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+#bodyNiveau1 h2 {
+    text-align: center;
+}
+#h1Jeux {
+    margin-top: 80px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 50px 70px;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50%;
+    background-color: #7bd18b;
+    color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+.btnSend {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 50px 70px;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50%;
+    background-color: #7bd18b;
+    color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+.btn:hover {
+    background-color: #aa0818;
+}
+.btnArret {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #e4de6a;
+    text-decoration: none;
+    color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+.btnArret:hover {
+    background-color: #aa0818;
+}
+.rules {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 50px;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+
+}
+.rules2 {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 50px;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.confetti {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ffd500;
+    top: 100vh;
+    border-radius: 50%;
+    animation: confetti-rise 2s ease-in-out infinite;
+}
+#inputNiveau1 {
+    width: 340px;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
