@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <title>Page de Jeu</title>
+    <title>Page d'accueil</title>
     <style>
         @keyframes confetti-rise {
             0% {
@@ -19,8 +19,8 @@
 </head>
 
 <body id="bodyNiveau1">
-        
-    <audio src="music.mp3" autoplay loop controls></audio>
+
+    <!-- <audio src="music.mp3" autoplay loop controls></audio> -->
 
     <h1>Prêt à jouer ?</h1>
     <a class="btn" href="formulaireNiveau1.php">Commencer</a>
@@ -30,22 +30,6 @@
             Ce jeu a été fait dans le cadre du Projet final. Les étudiants ayant
             travaillé sur ce jeu sont Alexandre Dawood, Alex Gelfant, Martin Aubry et Philippe.
         </p>
-        <form action="login.php" method="post">
-            <label for="nom">Nom d'utilisateur</label>
-            <input type="text" name="nom" id="nom" required>
-            <label for="password">Mot de passe</label>
-            <input type="password" name="password" id="password" required>
-            <input type="submit" value="Se connecter">
-        </form>
-        <form action="formulaireInscription.php" method="post">
-            <input type="submit" value="S'inscrire">
-        </form>
-        <?php
-        if (isset($_GET['error'])) {
-            echo '<p class="error">Le nom d\'utilisateur ou le mot de passe est incorrect</p>';
-        }
-        ?>
-        <a href="changePassword.php">Mot de passe oublié? Modifiez-le.</a>
     </div>
 
 

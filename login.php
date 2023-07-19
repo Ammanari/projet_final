@@ -1,7 +1,12 @@
 <?php
+
 require_once "phpFunctions.php";
-// Start the session
+
 session_start();
+
+if(isset($_POST['connect'])){
+// Start the session
+
 
 
 $servername = "localhost"; //replace with your database host
@@ -15,7 +20,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$username = $_POST['nom'];
+$username = $_POST['username'];
 $password = $_POST['password'];
 
 $sql = "SELECT authenticator.passCode, player.registrationOrder FROM player INNER JOIN authenticator ON player.registrationOrder = authenticator.registrationOrder WHERE player.userName = ? LIMIT 1";
@@ -43,9 +48,11 @@ if (password_verify($password, $db_password)) { // since the passwords are encry
     exit;
 } else {
     // Password is incorrect, redirect back to the login form.
-    header('Location: formulaireAccueil.php?error=1&username=' . $username);
+    $_SESSION['username'] = $username; // save the username so it can be displayed again
+    header('Location: connectionLogIn.php?error=1');
     exit;
 }
 
 $stmt->close();
 $conn->close();
+}

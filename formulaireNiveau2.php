@@ -1,5 +1,17 @@
 <?php
 require_once "phpFunctions.php";
+
+$sessionTimeout = 900; 
+
+
+if (isset($_SESSION['lastActivity']) && time() - $_SESSION['lastActivity'] > $sessionTimeout) {
+    session_unset();
+    session_destroy();
+    header("Location: connectionLogIn.php");
+    exit;
+} else {
+    $_SESSION['lastActivity'] = time();
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,7 +39,7 @@ require_once "phpFunctions.php";
 
         Vie restante : <?php echo getRemainingLives(); ?>
     </p>
-    <audio src="music2.mp3" autoplay loop controls></audio>
+    <audio src="music2.mp3" autoplay loop></audio>
     <h1 id="h1Jeux"> Niveau 2</h1>
     <p class="rules2">C'est Partis!<br />
         Niveau 2 : Organisez ces 6 lettres en ordre décroissant!<br />
@@ -44,13 +56,33 @@ require_once "phpFunctions.php";
         <input class="btn" id="submitbutton1" type="submit" name="Niveau2send" value="Send" />
     </form>
 
-    <form id="formArret" method="post" action="traitements.php">
-        <input id="formArret" class="btnArret" type="submit" name="arreterJeux" value="arreterJeux" />
-    </form>
+    <a class="btnArret" href="formulaireAccueil.html">arreter Jeux</a>
 
 </body>
 
 <script>
+
+
+    var sessionTimeout = <?php echo $sessionTimeout; ?> * 1000; // Convert seconds to milliseconds
+    var timeoutRedirectURL = "connectionLogIn.php";
+
+    var sessionTimeoutTimer = setTimeout(function() {
+        window.location.href = timeoutRedirectURL;
+    }, sessionTimeout);
+
+    function resetSessionTimeout() {
+        clearTimeout(sessionTimeoutTimer);
+        sessionTimeoutTimer = setTimeout(function() {
+            window.location.href = timeoutRedirectURL;
+        }, sessionTimeout);
+    }
+
+    document.addEventListener("mousemove", resetSessionTimeout);
+    document.addEventListener("keydown", resetSessionTimeout);
+
+
+
+
     function createConfetti() {
         var confetti = document.createElement("div");
         confetti.classList.add("confetti");

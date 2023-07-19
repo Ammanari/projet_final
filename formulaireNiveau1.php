@@ -1,5 +1,19 @@
 <?php
 require('phpFunctions.php'); // access my functions
+
+
+$sessionTimeout = 900; 
+
+
+if (isset($_SESSION['lastActivity']) && time() - $_SESSION['lastActivity'] > $sessionTimeout) {
+    session_unset();
+    session_destroy();
+    header("Location: connectionLogIn.php");
+    exit;
+} else {
+    $_SESSION['lastActivity'] = time();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -9,6 +23,17 @@ require('phpFunctions.php'); // access my functions
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <title>Page d'accueil</title>
+    <style>
+        @keyframes confetti-rise {
+            0% {
+                transform: translateY(-100vh);
+            }
+
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
 </head>
 
 <body id="bodyNiveau1">
@@ -25,7 +50,7 @@ require('phpFunctions.php'); // access my functions
         Reorganisez les lettres : FAEDBC
     </p>
 
-    <audio src="music1.mp3" autoplay loop controls></audio>
+    <!-- <audio src="music1.mp3" autoplay loop></audio> -->
 
     <form id="form1" method="post" action="traitements.php">
         <label for="inputNiveau1"> </label>
@@ -37,12 +62,30 @@ require('phpFunctions.php'); // access my functions
         <input class="btn" id="submitbutton1" type="submit" name="Niveau1send" value="Send" />
     </form>
 
-    <form id="formArret" method="post" action="traitements.php">
-        <input id="formArret" class="btnArret" type="submit" name="arreterJeux" value="arreterJeux" />
-    </form>
+    <a class="btnArret" href="formulaireAccueil.html">arreter Jeux</a>
 
 </body>
 <script>
+
+    var sessionTimeout = <?php echo $sessionTimeout; ?> * 1000; // Convert seconds to milliseconds
+    var timeoutRedirectURL = "connectionLogIn.php";
+
+    var sessionTimeoutTimer = setTimeout(function() {
+        window.location.href = timeoutRedirectURL;
+    }, sessionTimeout);
+
+    function resetSessionTimeout() {
+        clearTimeout(sessionTimeoutTimer);
+        sessionTimeoutTimer = setTimeout(function() {
+            window.location.href = timeoutRedirectURL;
+        }, sessionTimeout);
+    }
+
+    // Add event listeners to reset the session timeout on user activity
+    document.addEventListener("mousemove", resetSessionTimeout);
+    document.addEventListener("keydown", resetSessionTimeout);
+
+
     function createConfetti() {
         var confetti = document.createElement("div");
         confetti.classList.add("confetti");

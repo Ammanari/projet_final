@@ -160,9 +160,4 @@ if (isset($_POST['Niveau6send'])) {
     }
 }
 
-// traitements pour mettre fin au jeux avec le bouton quitter la partie.
-if (isset($_POST['arreterJeux'])) {
-    gameOver("incomplet");
-    echo "<script>alert('Vous avez interompu le jeux. Fin de la partie.')</script>";
-    echo "<script>window.location.href='formulaireAccueil.php'</script>";
-}
+// changement password
