@@ -49,6 +49,7 @@ function gameOver($result)
     $livesUsed = 6 - getRemainingLives();
     $registrationOrder = $_SESSION['registrationOrder'];
     executeQuery("INSERT INTO score SET scoreTime = NOW(), result='$result', livesUsed=$livesUsed, registrationOrder = $registrationOrder");
+    session_destroy();
     setRemainingLives(6);
 }
 
