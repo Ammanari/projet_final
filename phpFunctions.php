@@ -24,16 +24,13 @@ function executeQuery($sqlString)
     if (($result === true)) { // if i put == instead of ===, it will not work because the result is an object and not a boolean value.
         return;
     }
-
     return $result->fetch_assoc(); // get the result from the query and returns it.
     // assoc : associative array (key-value pair)
-
 }
 
 // get the number of lives left
 function getRemainingLives()
 {
-
     return $_SESSION['lives'];
 }
 
@@ -44,7 +41,6 @@ function setRemainingLives($lives)
 
 function decreaseRemainingLives()
 {
-
     $_SESSION['lives']--;
 }
 
@@ -53,6 +49,7 @@ function gameOver($result)
     $livesUsed = 6 - getRemainingLives();
     $registrationOrder = $_SESSION['registrationOrder'];
     executeQuery("INSERT INTO score SET scoreTime = NOW(), result='$result', livesUsed=$livesUsed, registrationOrder = $registrationOrder");
+    setRemainingLives(6);
 }
 
 // get the username for display
