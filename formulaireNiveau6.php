@@ -38,7 +38,7 @@ if (isset($_SESSION['lastActivity']) && time() - $_SESSION['lastActivity'] > $se
 
         Vie restante : <?php echo getRemainingLives(); ?>
     </p>
-    <audio src="music.mp3" autoplay loop></audio>
+    <audio src="music.mp3" autoplay controls loop></audio>
     <h1 id="h1Jeux"> Niveau 6</h1>
     <p class="rules2">C'est Partis!<br />
         Niveau 6 : : : identifier le plus petit nombre et le plus grand nombre d’un ensemble de
