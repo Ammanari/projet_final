@@ -63,7 +63,6 @@ session_destroy(); // Détruit la session car la vrai session c'est quand l'util
   </head>
 
   <body>
-    <audio src="music.mp3" autoplay loop controls></audio>
     <!DOCTYPE html>
 <html>
 <head>
