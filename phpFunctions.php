@@ -24,16 +24,13 @@ function executeQuery($sqlString)
     if (($result === true)) { // if i put == instead of ===, it will not work because the result is an object and not a boolean value.
         return;
     }
-
     return $result->fetch_assoc(); // get the result from the query and returns it.
     // assoc : associative array (key-value pair)
-
 }
 
 // get the number of lives left
 function getRemainingLives()
 {
-
     return $_SESSION['lives'];
 }
 
@@ -44,7 +41,6 @@ function setRemainingLives($lives)
 
 function decreaseRemainingLives()
 {
-
     $_SESSION['lives']--;
 }
 
@@ -62,4 +58,41 @@ function getUserName()
     $sql = "SELECT userName FROM player WHERE registrationOrder = $registrationOrder LIMIT 1";
     $result = executeQuery($sql);
     return $result['userName'];
+}
+
+function insertScore($result)
+{
+    global $conn;
+    $livesUsed = 6 - getRemainingLives();
+    $registrationOrder = $_SESSION['registrationOrder'];
+    
+    $sql = "INSERT INTO score (scoreTime, result, livesUsed, registrationOrder) 
+            VALUES (NOW(), '$result', $livesUsed, $registrationOrder)";
+    
+    $success = $conn->query($sql);
+    if (!$success) {
+        die("Error inserting score: " . $conn->error);
+    }
+}
+
+function getScoreHistory()
+{
+    global $conn;
+    $registrationOrder = $_SESSION['registrationOrder'];
+    $sql = "SELECT result, livesUsed, scoreTime FROM score WHERE registrationOrder = $registrationOrder ORDER BY scoreTime DESC";
+    $result = $conn->query($sql);
+
+    if (!$result) {
+        die("Error executing query: " . $conn->error);
+    }
+    $scores = [];
+    while ($row = $result->fetch_assoc()) {
+        $score = [
+            'result' => $row['result'],
+            'livesUsed' => $row['livesUsed'],
+            'scoreTime' => $row['scoreTime']
+        ];
+        $scores[] = $score;
+    }
+    return $scores;
 }
