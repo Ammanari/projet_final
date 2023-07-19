@@ -1,5 +1,5 @@
 *************************************IMPORTANT*****************************************
-*										      *
+*										                                                                           *
 *                                                                                     *
 *             LA PAGE D'ACCUEIL DU JEU EST LE FICHIER: connectionLogIn.php            *
 *                                                                                     *
