@@ -50,7 +50,7 @@ function getScoreHistory()
             </ul>
         </nav>
     </header>
-    <section>
+    <section class="hero">
         <h1>Welcome, <?php echo getUserName(); ?></h1>
         <h2>Your Scores:</h2>
         <ul>
