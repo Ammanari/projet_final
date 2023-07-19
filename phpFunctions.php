@@ -46,9 +46,15 @@ function decreaseRemainingLives()
 
 function gameOver($result)
 {
+    global $conn;
     $livesUsed = 6 - getRemainingLives();
     $registrationOrder = $_SESSION['registrationOrder'];
-    executeQuery("INSERT INTO score SET scoreTime = NOW(), result='$result', livesUsed=$livesUsed, registrationOrder = $registrationOrder");
+    $stmt = $conn->prepare("INSERT INTO score (scoreTime, result, livesUsed, registrationOrder) VALUES (NOW(), ?, ?, ?)");
+    $stmt->bind_param("sii", $result, $livesUsed, $registrationOrder);
+    $stmt->execute();
+    $stmt->close();
+    session_destroy();
+    setRemainingLives(6);
 }
 
 // get the username for display
@@ -57,7 +63,19 @@ function getUserName()
     $registrationOrder = $_SESSION['registrationOrder'];
     $sql = "SELECT userName FROM player WHERE registrationOrder = $registrationOrder LIMIT 1";
     $result = executeQuery($sql);
-    return $result['userName'];
+    return $result ? $result['userName'] : '';
+}
+
+// time elapsed since the beginning of the game 
+function getElapsedTime()
+{
+    return time() - $_SESSION['startTime'];
+}
+
+// stop game when time is up (15 mins) 
+function isTimeUp()
+{
+    return getElapsedTime() > 900;
 }
 
 function insertScore($result)
