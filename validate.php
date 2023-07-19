@@ -71,4 +71,3 @@ switch ($field) {
 $conn->close();
 
 echo $error;
-?>

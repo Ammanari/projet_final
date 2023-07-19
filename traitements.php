@@ -160,4 +160,20 @@ if (isset($_POST['Niveau6send'])) {
     }
 }
 
-// changement password
+// traitements pour mettre fin au jeux avec le bouton quitter la partie.
+if (isset($_POST['arreterJeux'])) {
+    gameOver("incomplet");
+    echo "<script>alert('Vous avez interompu le jeux. Fin de la partie.')</script>";
+    echo "<script>window.location.href='formulaireAccueil.php'</script>";
+}
+
+// deconnection 
+if (isset($_POST['deconnection'])) {
+    session_destroy();
+    echo "<script>window.location.href='connectionLogIn.php'</script>";
+}
+
+// voir les scores
+if (isset($_POST['scores'])) {
+    echo "<script>window.location.href='highscores.php'</script>";
+}

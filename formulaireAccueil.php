@@ -32,6 +32,13 @@
         </p>
     </div>
 
+    <form id="formArret" method="post" action="traitements.php">
+        <input id="formArret" class="btnArret" type="submit" name="deconnection" value="deconnected" />
+    </form>
+
+    <form id="formArret" method="post" action="traitements.php">
+        <input id="formArret" class="btnArret" type="submit" name="scores" value="see scores" />
+    </form>
 
 
     <script>

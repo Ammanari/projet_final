@@ -1,7 +1,7 @@
 <?php
 require_once "phpFunctions.php";
 
-$sessionTimeout = 900; 
+$sessionTimeout = 900;
 
 
 if (isset($_SESSION['lastActivity']) && time() - $_SESSION['lastActivity'] > $sessionTimeout) {
@@ -39,7 +39,7 @@ if (isset($_SESSION['lastActivity']) && time() - $_SESSION['lastActivity'] > $se
 
         Vie restante : <?php echo getRemainingLives(); ?>
     </p>
-    <audio src="music1.mp3" autoplay controls loop></audio>
+    <audio src="music1.mp3" autoplay loop></audio>
     <h1 id="h1Jeux"> Niveau 4</h1>
     <p class="rules2">C'est Partis!<br />
         Niveau 4 : Organisez ces 6 nombre en ordre décroissant!<br />
@@ -56,12 +56,12 @@ if (isset($_SESSION['lastActivity']) && time() - $_SESSION['lastActivity'] > $se
         <input class="btn" id="submitbutton1" type="submit" name="Niveau4send" value="Send" />
     </form>
 
-    <a class="btnArret" href="formulaireAccueil.html">arreter Jeux</a>
+    <form id="formArret" method="post" action="traitements.php">
+        <input id="formArret" class="btnArret" type="submit" name="arreterJeux" value="arreterJeux" />
+    </form>
 
 </body>
 <script>
-
-
     var sessionTimeout = <?php echo $sessionTimeout; ?> * 1000; // Convert seconds to milliseconds
     var timeoutRedirectURL = "connectionLogIn.php";
 
@@ -77,10 +77,10 @@ if (isset($_SESSION['lastActivity']) && time() - $_SESSION['lastActivity'] > $se
     }
 
     document.addEventListener("mousemove", resetSessionTimeout);
-    document.addEventListener("keydown", resetSessionTimeout);  
+    document.addEventListener("keydown", resetSessionTimeout);
 
 
-    
+
     function createConfetti() {
         var confetti = document.createElement("div");
         confetti.classList.add("confetti");

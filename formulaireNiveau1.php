@@ -2,7 +2,7 @@
 require('phpFunctions.php'); // access my functions
 
 
-$sessionTimeout = 900; 
+$sessionTimeout = 900;
 
 
 if (isset($_SESSION['lastActivity']) && time() - $_SESSION['lastActivity'] > $sessionTimeout) {
@@ -37,6 +37,7 @@ if (isset($_SESSION['lastActivity']) && time() - $_SESSION['lastActivity'] > $se
 </head>
 
 <body id="bodyNiveau1">
+    <audio src="music2.mp3" autoplay loop controls></audio>
     <header class="header">
         <p>
             Username : <?php echo getUserName(); ?>
@@ -62,11 +63,12 @@ if (isset($_SESSION['lastActivity']) && time() - $_SESSION['lastActivity'] > $se
         <input class="btn" id="submitbutton1" type="submit" name="Niveau1send" value="Send" />
     </form>
 
-    <a class="btnArret" href="formulaireAccueil.html">arreter Jeux</a>
+    <form id="formArret" method="post" action="traitements.php">
+        <input id="formArret" class="btnArret" type="submit" name="arreterJeux" value="arreterJeux" />
+    </form>
 
 </body>
 <script>
-
     var sessionTimeout = <?php echo $sessionTimeout; ?> * 1000; // Convert seconds to milliseconds
     var timeoutRedirectURL = "connectionLogIn.php";
 
