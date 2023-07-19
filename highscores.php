@@ -21,7 +21,7 @@ $registrationOrder = $_SESSION['registrationOrder'];
     <header>
         <nav>
             <ul>
-                <li><a href="index.php">Home</a></li>
+                <li><a href="connectionLogIn.php">Home</a></li>
                 <li><a href="formulaireAccueil.php">Game</a></li>
                 <li><a href="highscores.php">My Scores</a></li>
                 <li><form action="logout.php" method="post">
