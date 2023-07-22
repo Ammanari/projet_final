@@ -1,4 +1,9 @@
 <?php
+require_once 'database.php';
+
+$db = new Database();
+$db->connect();
+
 // Ce php permet d'afficher le message Votre compte a été créé avec succès ! après l'inscription d'un utilisateur
 // Il est appelé dans le formulairInscription.php
 session_start();
@@ -179,3 +184,4 @@ session_destroy(); // Détruit la session car la vrai session c'est quand l'util
   </body>
 
   </html>
+
