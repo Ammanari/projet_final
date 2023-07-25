@@ -21,8 +21,8 @@ if ($mysqli->connect_errno) {
     } else {
       $fname = $input_fname;
     }
-    $input_lname = trim($_POST["lastName"] ?? '');
 
+    $input_lname = trim($_POST["lastName"] ?? '');
     if (empty($input_lname)) {
       $lname_err = "Please enter a last name.";
     } elseif (!filter_var($input_lname, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => "/^[A-Z][a-zA-Z]*$/")))) {

@@ -38,13 +38,13 @@ setRemainingLives(6);
 </head>
 
 <body id="bodyNiveau1">
-<header class="game-header">
-    <div class="user-info">
-        Username : <span><?php echo getUserName(); ?></span>
-        Vie restante : <span><?php echo getRemainingLives() ?></span>
-    </div>
-    <!-- <div class="timer" id="timerwrap">Temps restant : <span id="timerElement"></span></div> -->
-</header>
+    <header class="game-header">
+        <div class="user-info">
+            Username : <span><?php echo getUserName(); ?></span>
+            Vie restante : <span><?php echo getRemainingLives() ?></span>
+        </div>
+        <!-- <div class="timer" id="timerwrap">Temps restant : <span id="timerElement"></span></div> -->
+    </header>
 
     <audio src="music2.mp3" autoplay loop controls></audio>
     <h1 id="h1Jeux"> Niveau 1</h1>
@@ -62,16 +62,13 @@ setRemainingLives(6);
     <form id="formArret" method="post" action="traitements.php">
         <input id="formArret" class="btnArret" type="submit" name="arreterJeux" value="Arreter Jeux" />
     </form>
-
 </body>
 <script>
     var sessionTimeout = <?php echo $sessionTimeout; ?> * 1000; // Convert seconds to milliseconds
     var timeoutRedirectURL = "connectionLogIn.php";
-
     var sessionTimeoutTimer = setTimeout(function() {
         window.location.href = timeoutRedirectURL;
     }, sessionTimeout);
-
 
     // Add event listeners to reset the session timeout on user activity
     document.addEventListener("mousemove", resetSessionTimeout);

@@ -3,7 +3,6 @@ require_once "phpFunctions.php";
 
 $sessionTimeout = 900;
 
-
 if (isset($_SESSION['lastActivity']) && time() - $_SESSION['lastActivity'] > $sessionTimeout) {
     session_unset();
     session_destroy();
@@ -15,7 +14,6 @@ if (isset($_SESSION['lastActivity']) && time() - $_SESSION['lastActivity'] > $se
 ?>
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
@@ -35,12 +33,12 @@ if (isset($_SESSION['lastActivity']) && time() - $_SESSION['lastActivity'] > $se
 </head>
 
 <body id="bodyNiveau1">
-<header class="game-header">
-    <div class="user-info">
-        Username : <span><?php echo getUserName(); ?></span>
-        Vie restante : <span><?php echo getRemainingLives() ?></span>
-    </div>
-</header>
+    <header class="game-header">
+        <div class="user-info">
+            Username : <span><?php echo getUserName(); ?></span>
+            Vie restante : <span><?php echo getRemainingLives() ?></span>
+        </div>
+    </header>
     <audio src="music1.mp3" autoplay loop></audio>
     <h1 id="h1Jeux"> Niveau 4</h1>
     <p class="rules2">C'est Partis!<br />
@@ -61,12 +59,10 @@ if (isset($_SESSION['lastActivity']) && time() - $_SESSION['lastActivity'] > $se
     <form id="formArret" method="post" action="traitements.php">
         <input id="formArret" class="btnArret" type="submit" name="arreterJeux" value="arreterJeux" />
     </form>
-
 </body>
 <script>
     var sessionTimeout = <?php echo $sessionTimeout; ?> * 1000; // Convert seconds to milliseconds
     var timeoutRedirectURL = "connectionLogIn.php";
-
     var sessionTimeoutTimer = setTimeout(function() {
         window.location.href = timeoutRedirectURL;
     }, sessionTimeout);
@@ -79,5 +75,4 @@ if (isset($_SESSION['lastActivity']) && time() - $_SESSION['lastActivity'] > $se
         startConfettiAnimation();
     };
 </script>
-
 </html>

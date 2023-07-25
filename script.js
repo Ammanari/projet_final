@@ -75,3 +75,4 @@ function checkUser(str) {
         xmlhttp.send();
     }
 }
+

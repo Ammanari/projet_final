@@ -47,18 +47,13 @@ session_destroy(); // Détruit la session car la vrai session c'est quand l'util
         </div>
       </form>
 
-      <?php unset($_SESSION['username']); ?>
-      <form id="inscription" action= "formulaireInscription.php" method= "post">
-        <div class="form-group">
-            <input type="submit" value="S'inscrire" name = "inscription">
-          </div>
-          <?php
-            if (isset($_GET['error'])) {
-                echo '<p class="error">Le nom d\'utilisateur ou le mot de passe est incorrect</p>';
-            }
-            ?>
-            <a id="changePW" href="changePassword.php">Mot de passe oublié? Modifiez-le.</a>
-        </form>
+      <?php unset($_SESSION['username']);
+        if (isset($_GET['error'])) {
+            echo '<p class="error">Le nom d\'utilisateur ou le mot de passe est incorrect</p>';
+        }
+        ?>
+        <a id="changePW" href="changePassword.php">Mot de passe oublié? Modifiez-le.</a>
+      </form>
     </div>
 </div>
 
