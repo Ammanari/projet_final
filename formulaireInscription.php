@@ -3,13 +3,10 @@
 if (isset($_SESSION['registrationOrder'])) {
   header('Location: index.php?message=You are already logged in');
 }
-
 session_start();
 
 $mysqli = new mysqli('localhost', 'root', '', 'kidsgames');
-
 $fname = $lname = $username = $password = $cpassword = "";
-
 $fname_err = $lname_err = $username_err = $password_err = $cpassword_err = "";
 
 if ($mysqli->connect_errno) {
