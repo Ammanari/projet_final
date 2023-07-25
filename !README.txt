@@ -1,7 +1,7 @@
 *************************************IMPORTANT*****************************************
 *										      *
 *                                                                                     *
-*             LA PAGE D'ACCUEIL DU JEU EST LE FICHIER: connectionLogIn.php            *
+*             LA PAGE D'ACCUEIL DU JEU EST LE FICHIER: index.php                      *
 *                                                                                     *
 *                                                                                     *
 *                                                                                     *
@@ -12,7 +12,6 @@
 1. NOM DES DEVELOPPEURS ET LA CONTRIBUTION DE CHACUN:
 
 Martin Aubry
-
 
 -Création de comptes utilisateur ou inscription (Sign-Up). 
 -Validation en temps réel des informations saisies par 
@@ -33,7 +32,9 @@ utilisateur avec AJAX.
 -Déconnexion à un compte utilisateur connecté (Sign-Out et Time-Out)."
 -Création de la structure pour créer et échanger des données avec la base de données
 
+
 Alex Gelfand
+
 -Création de la structure pour créer et échanger des données 
  avec la base de données
 -Création et mise en place du compte GitHub
@@ -44,14 +45,15 @@ Alex Gelfand
  d’interactivité et d’attraction additionnelles."
 
 
-
 Alexandre Dawood
+
 -Connexion à un compte utilisateur existant (Sign-In).
 -Déconnexion à un compte utilisateur connecté (Sign-Out et Time-Out)."
 -Création de la structure pour créer et échanger des données avec la base de données
 -Modification du mot de passe d’un compte utilisateur existant. 
 -Affichage personnalisé des fonctionnalités et ajout de fonctionnalités 
  d’interactivité et d’attraction additionnelles."
+
 
 ***************************************************************************************
 
@@ -169,4 +171,5 @@ pendant une partie en cours, le résultat est incomplet.
 
 Partie réussie : Lorsque le joueur parvient à terminer tous les 
 niveaux sans épuiser toutes ses vies, le résultat est une réussite.
+
 ***************************************************************************************

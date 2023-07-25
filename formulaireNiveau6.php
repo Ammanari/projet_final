@@ -33,11 +33,12 @@ if (isset($_SESSION['lastActivity']) && time() - $_SESSION['lastActivity'] > $se
 </head>
 
 <body id="bodyNiveau3">
-    <p>
-        Username : <?php echo getUserName(); ?>
-
-        Vie restante : <?php echo getRemainingLives(); ?>
-    </p>
+<header class="game-header">
+    <div class="user-info">
+        Username : <span><?php echo getUserName(); ?></span>
+        Vie restante : <span><?php echo getRemainingLives() ?></span>
+    </div>
+</header>
     <audio src="music.mp3" autoplay loop></audio>
     <h1 id="h1Jeux"> Niveau 6</h1>
     <p class="rules2">C'est Partis!<br />

@@ -49,8 +49,10 @@ function gameOver($result)
     $livesUsed = 6 - getRemainingLives();
     $registrationOrder = $_SESSION['registrationOrder'];
     executeQuery("INSERT INTO score SET scoreTime = NOW(), result='$result', livesUsed=$livesUsed, registrationOrder = $registrationOrder");
-    session_destroy();
     setRemainingLives(6);
+    if($result != "incomplet") {
+        session_destroy();
+    }
 }
 
 // get the username for display
@@ -82,4 +84,23 @@ function getScoreHistory()
         $scores[] = $score;
     }
     return $scores;
+}
+
+function getTimeElapsed() {
+    if (isset($_SESSION['startTime'])) {
+        $startTime = $_SESSION['startTime'];
+        var_dump($startTime);
+        $currentTime = time();
+        var_dump($currentTime);
+        $timeElapsed = $currentTime - $startTime;
+        var_dump($timeElapsed);
+
+        $hours = floor($timeElapsed / 3600);
+        $minutes = floor(($timeElapsed % 3600) / 60);
+        $seconds = $timeElapsed % 60;
+
+        return sprintf("%02d:%02d:%02d", $hours, $minutes, $seconds);
+    } else {
+        return '';
+    }
 }

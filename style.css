@@ -1,31 +1,13 @@
-.hero body {
-	background: #cce6ff;
-	color: #9999ff;
-	font-family: Arial;
-	font-size: 14px;
-	margin: 0;
-	min-width: 960px;
-	padding: 0;
-	transition: background-color 0.5s;
-}
-.hero h1 {
-    margin: 120px;
-    font-size: 40px;
-    font-weight: bold;
-    color: #316ef1;
-    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-.hero h2 {
-    margin-top: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    color: #ccffff;
-    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+body {
+    font-family: Arial;
+    margin: 5px;
+    min-width: 960px;
+    padding: 10px;
 }
 
 a {
-	outline: none;
+    outline: none;
+    cursor: pointer;
 }
 img {
 	border: 0;
@@ -35,65 +17,155 @@ form {
 	padding: 0;
 }
 
+ul {
+    list-style: none;    
+}
+
 /* HEADER */
 header {
 	background: #99b3ff;
 	width: 100%;
 	vertical-align: middle;
+    font-size : 18px;
+    padding: 8px;
 }
 header nav {
 	margin: 0 auto;
+    padding-left: 180px;
 	overflow: hidden;
 	width: auto;
 }
 header nav ul {
-	float: center;
-	list-style: none;
-	margin: 20px 0 0;
+	margin: 12px 0 0;
 	overflow: hidden;
 	padding: 0;
 }
 header nav ul li {
 	float: left;
-	padding: 0 5px;
+    line-height: 40px;
+	padding: 0 10px;
 }
 header nav ul li a {
-	color: #495531;
+    color: #495531;
+    white-space: nowrap;
 	display: block;
-	height: 20px;
-	line-height: 20px;
+    font-weight: bold;
 	text-align: center;
 	text-decoration: none;
 	width: 90px;
 }
 header nav ul li a:hover {
 	color: #800060;
+    transition: ease-in-out 0.2s;
+}
+
+header button {
+	background: #ffccff;
+	border: 1px solid #ffb3ff;
+	border-radius: 4px;
+	height:	26px;
+	color: #0073e6;
+	cursor: pointer;
+    font-size : 15px;
+	font-weight: bold;
+	margin: 0 24px 12px;
+	text-align: center;
+	text-decoration: none;
+	width: 76px;
+}
+
+header button:hover {
+    font-size: 16px;
+    transition: ease-in-out 0.2s;
 }
 
 /* CONTENT */
 
-button {
-	background: #ffccff;
-	border: 1px solid #ffb3ff;
-	border-radius: 1px;
-	height:	26px;
-	color: #0073e6;
-	cursor: pointer;
-	font-weight: bold;
-	margin: 0 0 12px;
-	padding: 3px 6px;
-	text-align: center;
-	text-decoration: none;
-	width: 90px;
+.hero {
+	background: #59afff;
+	color: #9999ff;
+	font-family: Arial;
+	font-size: 14px;
+	margin: 0;
+	min-width: 960px;
+	padding: 0;
+	transition: background-color 0.5s;
 }
-#create-new {
-	background: #fff;
-	border: 1px solid #ffb3ff;
-	border-radius: 1px;
-	padding: 2px;
-	width:auto;
-	font-size:0.85em;
-	margin: 0 0 10px;
+
+.hero h1 {
+    margin: 120px;
+    font-size: 40px;
+    text-align: left;
+    font-weight: bold;
+    color: #316ef1;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero h2 {
+    margin-top: 10px;
+    font-size: 24px;
+    text-align: left;
+    padding: 10px 16px 12px;
+    font-weight: bold;
+    color: #ccffff;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#scores {   
+    margin-top: 10px;
+    font-size: 16px;
+    text-align: center;
+    padding: 10px 16px;
+    font-weight: bold;
+    color: #703cff;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-container {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 5px;
+}
+
+input[type="submit"],
+input[type="button"] {
+    margin-top: 10px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #7bd18b;
+}
+
+input[type="submit"]:hover,
+input[type="button"]:hover {
+    background-color: #e4de6a;
+    transition: ease-in-out 0.6s;
+}
+
+#changePW {
+    margin-top: 18px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #ee55ff;
+}
+
+.error {
+    color: red;
 }
 
 div.content {
@@ -138,12 +210,14 @@ footer div {
 }
 
 /* GAME */
+
 audio {
     position: absolute;
     top: 10px;
     left: 10px;
     width: 150px;
     height: 30px;
+    padding: 80px 90px;
 }
 
 #bodyNiveau1 {
@@ -162,15 +236,17 @@ audio {
     background-color: #7ac0e1;
 }
 #bodyNiveau1 h1 {
-    margin-top: 100px;
+    margin-top: 20px;
     font-size: 40px;
     font-weight: bold;
     color: #fff;
     text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 #bodyNiveau1 h2 {
+    font-size: 26px;
     text-align: center;
 }
+
 #h1Jeux {
     margin-top: 80px;
     font-size: 40px;
@@ -178,6 +254,38 @@ audio {
     color: #fff;
     text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
+
+.game-header {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #55aaff;
+    border-radius: 5px;
+}
+
+.game-header h3 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.game-header .user-info {
+    display: flex;
+    justify-content: center;
+    margin-top:3px;
+}
+
+.game-header .user-info span {
+    margin: 0;
+    padding: 0 24px 8px 8px;
+    font-weight: bold;
+}
+
+.game-header .timer {
+    background-color: #ff5555;
+    border-radius: 5px;
+    width: 400px;
+}
+
+
 .btn {
     display: inline-block;
     margin-top: 30px;

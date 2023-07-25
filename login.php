@@ -38,13 +38,9 @@ if (password_verify($password, $db_password)) { // since the passwords are encry
     // Password is correct, so start a new session, then save the username to the session
     $_SESSION['registrationOrder'] = $registrationOrder;
 
-
-    // start the counter
-    $_SESSION['startTime'] = time();
-    setRemainingLives(6);
-
-    // Password is correct, start the game.
-    header('Location: formulaireNiveau1.php');
+    // Password is correct
+    $_SESSION['logged_in'] = true;
+    header('Location: index.php');
     exit;
 } else {
     // Password is incorrect, redirect back to the login form.

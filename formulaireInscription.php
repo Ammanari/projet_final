@@ -1,8 +1,10 @@
 <?php
+// check for login else return to homepage
+if (isset($_SESSION['registrationOrder'])) {
+  header('Location: index.php?message=You are already logged in');
+}
+
 session_start();
-
-
-
 
 $mysqli = new mysqli('localhost', 'root', '', 'kidsgames');
 
@@ -224,178 +226,64 @@ if ($mysqli->connect_errno) {
   <head>
     <title>User Registration</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <script src="validation.js"></script>
   </head>
 
   <body id="bodyNiveau1">
-    <h2>User Registration</h2>
-    <div class="form-container">
-
-      <form id="registrationForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-
-        <div class="form-group">
-
-          <label for="firstName">First Name:</label>
-
-          <input type="text" id="firstName" name="firstName" value="<?php echo $fname ?>">
-
-          <span id="firstNameError" class="error"><?php echo $fname_err ?></span>
-
-        </div>
-
-
-
-
-        <div class="form-group">
-
-          <label for="lastName">Last Name:</label>
-
-          <input type="text" id="lastName" name="lastName" value="<?php echo $lname ?>">
-
-          <span id="lastNameError" class="error"><?php echo $lname_err ?></span>
-
-        </div>
-
-
-
-
-        <div class="form-group">
-
-          <label for="username">Username:</label>
-
-          <input type="text" id="username" name="username" value="<?php echo $username ?>">
-
-          <span id="usernameError" class="error"><?php echo $username_err ?></span>
-
-        </div>
-
-
-
-
-        <div class="form-group">
-
-          <label for="password">Password:</label>
-
-          <input type="password" id="password" name="password" value="<?php echo $password ?>">
-
-          <span id="passwordError" class="error"><?php echo $password_err ?></span>
-
-        </div>
-
-
-
-
-        <div class="form-group">
-
-          <label for="confirmPassword">Confirm Password:</label>
-
-          <input type="password" id="confirmPassword" name="confirmPassword" value="<?php echo $cpassword ?>">
-
-          <span id="confirmPasswordError" class="error"><?php echo $cpassword_err ?></span>
-
-        </div>
-
-
-
-
-        <div class="form-group">
-
-          <input id="changepwd" type="submit" name="submit" value="Sign Up">
-          <input id="changepwd" type="button" value="Log in" onclick="location.href='connectionLogIn.php';">
-        </div>
-
-      </form>
-
-    </div>
-  </body>
-  <script>
-    function checkUser(str) {
-
-      if (str.length == 0) {
-
-        document.getElementById("username").innerHTML = "";
-
-        return;
-
-      } else {
-
-        var xmlhttp = new XMLHttpRequest();
-
-        xmlhttp.onreadystatechange = function() {
-
-          if (this.readyState == 4 && this.status == 200) {
-
-            document.getElementById("username").innerHTML = this.responseText;
-
-          }
-
-        };
-
-        xmlhttp.open("POST", "formulaireInscription2.php?rqst=" + str, true);
-
-        xmlhttp.send();
-
-      }
-
-    }
-
-
-
-
-    function changeBackgroundColor() {
-      var colors = ["#7ac0e1", "#e694e6", "#a285df"]; // Liste des couleurs de fond
-      var index = 0;
-      var body = document.getElementsByTagName("body")[0];
-
-      setInterval(function() {
-        body.style.backgroundColor = colors[index];
-        index = (index + 1) % colors.length;
-      }, 3000); // Changer la couleur toutes les 3 secondes (3000 millisecondes)
-    }
-
-
-
-
-    function createConfetti() {
-      var confetti = document.createElement("div");
-      confetti.classList.add("confetti");
-      confetti.style.left = Math.random() * 100 + "vw";
-      confetti.style.animationDelay = Math.random() * 1 + "s"; // Décalage aléatoire de l'animation
-      confetti.style.backgroundColor = getRandomColor(); // Obtenir une couleur aléatoire pour chaque confetti
-      document.body.appendChild(confetti);
-
-
-      setTimeout(function() {
-
-        confetti.remove();
-
-      }, 2000); // Supprimer le confetti après 2 secondes (2000 millisecondes)
-
-    }
-
-    function getRandomColor() {
-      var letters = "0123456789ABCDEF";
-      var color = "#";
-      for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-      }
-
-      return color;
-    }
-
-
-
-
-    function startConfettiAnimation() {
-      setInterval(createConfetti, 100);
-    }
-
-    window.onload = function() {
-      changeBackgroundColor();
-      startConfettiAnimation();
-    };
-  </script>
-  <script src="validation.js"></script>
-
-
-
-  </html>
+  <header>
+      <nav>
+          <ul>
+              <li><a href="index.php">Home</a></li>
+          </ul>
+      </nav>
+  </header>
+
+  <h2>User Registration</h2>
+  <div class="form-container">
+    <form id="registrationForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+
+      <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" value="<?php echo $fname ?>">
+        <span id="firstNameError" class="error"><?php echo $fname_err ?></span>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" value="<?php echo $lname ?>">
+        <span id="lastNameError" class="error"><?php echo $lname_err ?></span>
+      </div>
+
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" value="<?php echo $username ?>">
+        <span id="usernameError" class="error"><?php echo $username_err ?></span>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" value="<?php echo $password ?>">
+        <span id="passwordError" class="error"><?php echo $password_err ?></span>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" value="<?php echo $cpassword ?>">
+        <span id="confirmPasswordError" class="error"><?php echo $cpassword_err ?></span>
+      </div>
+
+      <div class="form-group">
+        <input id="changepwd" type="submit" name="submit" value="Sign Up">
+      </div>
+    </form>
+  </div>
+</body>
+<script>
+window.onload = function() {
+  changeBackgroundColor();
+  startConfettiAnimation();
+};
+</script>
+
+</html>

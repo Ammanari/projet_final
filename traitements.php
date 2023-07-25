@@ -164,7 +164,7 @@ if (isset($_POST['Niveau6send'])) {
 if (isset($_POST['arreterJeux'])) {
     gameOver("incomplet");
     echo "<script>alert('Vous avez interompu le jeux. Fin de la partie.')</script>";
-    echo "<script>window.location.href='formulaireAccueil.php'</script>";
+    echo "<script>window.location.href='index.php'</script>";
 }
 
 // deconnection 

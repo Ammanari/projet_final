@@ -1,4 +1,6 @@
 <?php
+require_once 'session_handler.php';
+
 if (isset($_POST['changePassword'])) {
     $servername = "localhost";
     $username = "root";
@@ -82,7 +84,18 @@ if (isset($_POST['changePassword'])) {
 </head>
 
 <body id="bodyNiveau2">
-    <audio src="music2.mp3" autoplay loop controls></audio>
+<header>
+  <nav>
+    <ul>
+      <li><a href="index.php">Home</a></li>
+      <li><a href="./formulaireAccueil.php">Game</a></li>
+      <li><form action="./logout.php" method="post"></li>
+      <li><a href="./highscores.php">My Scores</a></li>
+      <li><form action="./logout.php" method="post">
+      <button type="submit" name="logout-submit">Logout</button></form></li>
+    </ul>
+  </nav>
+</header>
     <form id="formpassword" action="changePassword.php" method="post">
         <h2>Changer le mot de passe</h2>
         <label for="username">Nom d'utilisateur</label>
