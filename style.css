@@ -87,7 +87,7 @@ header button:hover {
 	font-family: Arial;
 	font-size: 14px;
 	margin: 0;
-	min-width: 960px;
+    width: 100%;
 	padding: 0;
 	transition: background-color 0.5s;
 }
@@ -107,7 +107,18 @@ header button:hover {
     text-align: left;
     padding: 10px 16px 12px;
     font-weight: bold;
+    color: #b5fdfd;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero p {
+    margin-top: 10px;
+    font-size: 16px;
+    text-align: left;
+    width: 540px;
+    padding: 10px 16px 12px;
     color: #ccffff;
+    word-wrap:normal;
     text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 

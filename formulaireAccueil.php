@@ -20,17 +20,17 @@
 </head>
 
 <body id="bodyNiveau1">
-<header>
-    <nav>
-        <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="./formulaireAccueil.php">Game</a></li>
-            <li><a href="./highscores.php">My Scores</a></li>
-            <li><form action="./logout.php" method="post">
-            <button type="submit" name="logout-submit">Logout</button></form></li>
-        </ul>
-    </nav>
-</header>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="./formulaireAccueil.php">Game</a></li>
+                <li><a href="./highscores.php">My Scores</a></li>
+                <li><form action="./logout.php" method="post">
+                <button type="submit" name="logout-submit">Logout</button></form></li>
+            </ul>
+        </nav>
+    </header>
 
     <h1>Prêt à jouer ?</h1>
     <a class="btn" href="formulaireNiveau1.php">Commencer</a>

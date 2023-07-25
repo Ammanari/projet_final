@@ -38,15 +38,10 @@ require_once 'session_handler.php';
         <div id="frame">
             <div class="content">
                 <div>
-                    <h1>Make Baby Smart</h1>
-                    <h2>My Baby Smartest</h2>
-                </div>
-                <div>
-                    <div class="parallax">
-                        <h1>Special Kid Special Parent</h1>
-                        <h2>They are Special</h2>
-                        <p>Who wants ipsem?</p>
-                    <p></p>
+                    <h1>Games for a Smarter Baby</h1>
+                    <p>Our premium games are designed to help your baby develop key literacy, numeracy and problem-solving skills, while also encouraging social development and interaction with peers.</p>
+                    <h2>Improve coordination</h2>
+                    <p>A lot of science shows that video games are very good for making people smart.</p>
                 </div>
             </div>
         </div>
