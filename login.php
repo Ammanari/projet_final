@@ -40,12 +40,12 @@ if (password_verify($password, $db_password)) { // since the passwords are encry
 
     // Password is correct
     $_SESSION['logged_in'] = true;
-    header('Location: index.php');
+    header('Location: membersarea.php');
     exit;
 } else {
     // Password is incorrect, redirect back to the login form.
     $_SESSION['username'] = $username; // save the username so it can be displayed again
-    header('Location: connectionLogIn.php?error=1');
+    header('Location: index.php?error=1');
     exit;
 }
 

@@ -24,8 +24,7 @@ function executeQuery($sqlString)
     if (($result === true)) { // if i put == instead of ===, it will not work because the result is an object and not a boolean value.
         return;
     }
-    return $result->fetch_assoc(); // get the result from the query and returns it.
-    // assoc : associative array (key-value pair)
+    return $result->fetch_assoc();
 }
 
 // get the number of lives left

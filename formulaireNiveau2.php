@@ -77,4 +77,5 @@ if (isset($_SESSION['lastActivity']) && time() - $_SESSION['lastActivity'] > $se
         startConfettiAnimation();
     };
 </script>
+
 </html>

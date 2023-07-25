@@ -1,7 +1,5 @@
 body {
     font-family: Arial;
-    margin: 5px;
-    padding: 8px;  
 }
 a {
     outline: none;
@@ -50,7 +48,7 @@ header {
 }
 header nav {
 	margin: 0 auto;
-    padding-left: 180px;
+    padding-left: 160px;
 	overflow: hidden;
 	width: auto;
 }

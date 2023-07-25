@@ -17,10 +17,9 @@ function createConfetti() {
     confetti.style.backgroundColor = getRandomColor(); // Obtenir une couleur aléatoire pour chaque confetti
     document.body.appendChild(confetti);
 
-
     setTimeout(function() {
         confetti.remove();
-    }, 2000); // Supprimer le confetti après 2 secondes (2000 millisecondes)
+    }, 2000);
 }
 
 function getRandomColor() {
@@ -34,11 +33,6 @@ function getRandomColor() {
 
 function startConfettiAnimation() {
     setInterval(createConfetti, 100);
-}
-
-window.onload = function() {
-    changeBackgroundColor();
-    startConfettiAnimation();
 }
 
 function resetSessionTimeout() {
@@ -75,4 +69,3 @@ function checkUser(str) {
         xmlhttp.send();
     }
 }
-

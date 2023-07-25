@@ -153,7 +153,6 @@ if (isset($_POST['Niveau6send'])) {
             echo "<script>alert('Vous avez perdu')</script>";
             echo "<script>window.location.href='formulaireAccueil.php'</script>";
         } else {
-
             echo "<script>alert('Mauvaise reponse, ressayez')</script>";
             echo "<script>window.location.href='formulaireNiveau6.php'</script>";
         }
