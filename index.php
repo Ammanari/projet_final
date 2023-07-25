@@ -41,7 +41,7 @@ require_once 'session_handler.php';
                     <h1>Games for a Smarter Baby</h1>
                     <p>Our premium games are designed to help your baby develop key literacy, numeracy and problem-solving skills, while also encouraging social development and interaction with peers.</p>
                     <h2>Improve coordination</h2>
-                    <p>A lot of science shows that video games are very good for making people smart.</p>
+                    <p>A lot of science shows that video games are very good for making people smart. Studies prove it works so you should sign up!</p>
                 </div>
             </div>
         </div>

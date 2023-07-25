@@ -32,6 +32,13 @@ session_destroy();
 </head>
 
 <body id="bodyNiveau1">
+<header>
+  <nav>
+      <ul>
+          <li><a href="index.php">Home</a></li>
+      </ul>
+  </nav>
+</header>
 <div>
   <h2>User Connection</h2>
     <div class="form-container">
