@@ -25,7 +25,9 @@ require_once 'session_handler.php';
                     ';
                 } else {
                 echo '<li><a href="./connectionLogin.php">
-                <button>Login</button></a></li>';
+                    <button>Login</button></a></li>
+                    <li><a href="./formulaireInscription.php">
+                    <button>New</button></a></li>';
                 }
             ?>
         </ul>
