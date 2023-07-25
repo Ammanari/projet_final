@@ -61,11 +61,8 @@ if (isset($_POST['changePassword'])) {
     $conn->close();
 }
 ?>
-
-
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
@@ -85,17 +82,28 @@ if (isset($_POST['changePassword'])) {
 
 <body id="bodyNiveau2">
 <header>
-  <nav>
-    <ul>
-      <li><a href="index.php">Home</a></li>
-      <li><a href="./formulaireAccueil.php">Game</a></li>
-      <li><form action="./logout.php" method="post"></li>
-      <li><a href="./highscores.php">My Scores</a></li>
-      <li><form action="./logout.php" method="post">
-      <button type="submit" name="logout-submit">Logout</button></form></li>
-    </ul>
-  </nav>
+    <nav>
+        <ul>
+        <li><a href="index.php">Home</a></li>
+        <?php
+                if (isUserLoggedIn()) {
+                echo'<li><a href="./formulaireAccueil.php">Game</a></li>
+                    <li><form action="./logout.php" method="post"></li>
+                    <li><a href="./highscores.php">My Scores</a></li>
+                    <li><form action="./logout.php" method="post">
+                    <button type="submit" name="logout-submit">Logout</button></form></li>
+                    ';
+                } else {
+                echo '<li><a href="./connectionLogin.php">
+                    <button>Login</button></a></li>
+                    <li><a href="./formulaireInscription.php">
+                    <button>New</button></a></li>';
+                }
+            ?>
+        </ul>
+    </nav>
 </header>
+<div class="form-container">
     <form id="formpassword" action="changePassword.php" method="post">
         <h2>Changer le mot de passe</h2>
         <label for="username">Nom d'utilisateur</label>
@@ -115,8 +123,10 @@ if (isset($_POST['changePassword'])) {
         <br>
         <br>
         <input id="changepwd" type="submit" value="Changer le mot de passe" name="changePassword">
-        <a id="changepwd" href="connectionLogIn.php">Retour page connexion</a>
+        <br /><br/>
+        <a id="changePW" href="connectionLogIn.php">Retour page connexion</a>
     </form>
+</div>
 </body>
 <script>
     function createConfetti() {

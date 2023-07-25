@@ -6,7 +6,7 @@ require_once 'session_handler.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <title>Make Baby Smart</title>
+    <title>Smart Baby Game Portal</title>
     <link rel="stylesheet" href="style.css">
     <link rel="script" href="script.js">
 </head>
