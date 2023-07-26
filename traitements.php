@@ -11,7 +11,7 @@ if (isset($_POST['Niveau1send'])) {
 
     if ($userAnswerLevel1 == $level1Answer) {
         // si la reponse est la meme, on affiche une alerte "Bravo, vous avez reussi le niveau 1" et ne pas afficher local host sais:
-        echo "<script>alert('Bravo, vous avez reussi le niveau 1')</script>";
+        echo "<script>alert('Bravo, ABCDEF est la bonne reponse! Vous avez reussi le niveau 1')</script>";
         // on redirige vers le niveau 2
         echo "<script>window.location.href='formulaireNiveau2.php'</script>";
     } else {
@@ -19,10 +19,10 @@ if (isset($_POST['Niveau1send'])) {
         decreaseRemainingLives();
         if (getRemainingLives() <= 0) {
             gameOver("échec");
-            echo "<script>alert('Vous avez perdu')</script>";
+            echo "<script>alert('Il ne vous reste plus de vie! vous avez perdu, commencez une nouvelle partie!')</script>";
             echo "<script>window.location.href='formulaireAccueil.php'</script>";
         } else {
-            echo "<script>alert('Mauvaise reponse, ressayez')</script>";
+            echo "<script>alert('Mauvaise reponse, la bonne reponse est : ABCDEF ,ressayez')</script>";
             echo "<script>window.location.href='formulaireNiveau1.php'</script>";
         }
     }
@@ -37,7 +37,7 @@ if (isset($_POST['Niveau2send'])) {
 
     if ($userAnswerLevel2 == $level2Answer) {
         // si la reponse est la meme, on affiche une alerte "Bravo, vous avez reussi le niveau 2" et ne pas afficher local host sais:
-        echo "<script>alert('Bravo, vous avez reussi le niveau 2')</script>";
+        echo "<script>alert('Bravo, ZYXWVU  est la bonne reponse! Vous avez reussi le niveau 2')</script>";
         // on redirige vers le niveau 3
         echo "<script>window.location.href='formulaireNiveau3.php'</script>";
     } else {
@@ -45,10 +45,10 @@ if (isset($_POST['Niveau2send'])) {
         decreaseRemainingLives();
         if (getRemainingLives() <= 0) {
             gameOver("échec");
-            echo "<script>alert('Vous avez perdu')</script>";
+            echo "<script>alert('Il ne vous reste plus de vie! vous avez perdu, commencez une nouvelle partie!')</script>";
             echo "<script>window.location.href='formulaireAccueil.php'</script>";
         } else {
-            echo "<script>alert('Mauvaise reponse, ressayez')</script>";
+            echo "<script>alert('Mauvaise reponse, la bonne reponse est : ZYXWVU ,ressayez')</script>";
             echo "<script>window.location.href='formulaireNiveau2.php'</script>";
         }
     }
@@ -63,7 +63,7 @@ if (isset($_POST['Niveau3send'])) {
 
     if ($userAnswerLevel3 == $level3Answer) {
         // si la reponse est la meme, on affiche une alerte "Bravo, vous avez reussi le niveau 3" et ne pas afficher local host sais:
-        echo "<script>alert('Bravo, vous avez reussi le niveau 3')</script>";
+        echo "<script>alert('Bravo, 2 12 23 45 54 78  est la bonne reponse! Vous avez reussi le niveau 3')</script>";
         // on redirige vers le niveau 4
         echo "<script>window.location.href='formulaireNiveau4.php'</script>";
     } else {
@@ -71,10 +71,10 @@ if (isset($_POST['Niveau3send'])) {
         decreaseRemainingLives();
         if (getRemainingLives() <= 0) {
             gameOver("échec");
-            echo "<script>alert('Vous avez perdu')</script>";
+            echo "<script>alert('Il ne vous reste plus de vie! vous avez perdu, commencez une nouvelle partie!')</script>";
             echo "<script>window.location.href='formulaireAccueil.php'</script>";
         } else {
-            echo "<script>alert('Mauvaise reponse, ressayez')</script>";
+            echo "<script>alert('Mauvaise reponse, la bonne reponse est : 2 12 23 45 54 78 ,ressayez')</script>";
             echo "<script>window.location.href='formulaireNiveau3.php'</script>";
         }
     }
@@ -89,7 +89,7 @@ if (isset($_POST['Niveau4send'])) {
 
     if ($userAnswerLevel4 == $level4Answer) {
         // si la reponse est la meme, on affiche une alerte "Bravo, vous avez reussi le niveau 4" et ne pas afficher local host sais:
-        echo "<script>alert('Bravo, vous avez reussi le niveau 4')</script>";
+        echo "<script>alert('Bravo, 100 96 78 45 43 12 est la bonne reponse! Vous avez reussi le niveau 4')</script>";
         // on redirige vers le niveau 5
         echo "<script>window.location.href='formulaireNiveau5.php'</script>";
     } else {
@@ -97,10 +97,10 @@ if (isset($_POST['Niveau4send'])) {
         decreaseRemainingLives();
         if (getRemainingLives() <= 0) {
             gameOver("échec");
-            echo "<script>alert('Vous avez perdu')</script>";
+            echo "<script>alert('Il ne vous reste plus de vie! vous avez perdu, commencez une nouvelle partie!')</script>";
             echo "<script>window.location.href='formulaireAccueil.php'</script>";
         } else {
-            echo "<script>alert('Mauvaise reponse, ressayez')</script>";
+            echo "<script>alert('Mauvaise reponse, la bonne reponse est : 100 96 78 45 43 12 ,ressayez')</script>";
             echo "<script>window.location.href='formulaireNiveau4.php'</script>";
         }
     }
@@ -111,11 +111,11 @@ if (isset($_POST['Niveau5send'])) {
 
     // recuperer mes variables et les mettre en lowercase:
     $userAnswerLevel5 = strtolower($_POST['niveau5']);
-    $level5Answer = strtolower("AS");
+    $level5Answer = strtolower("AZ");
 
     if ($userAnswerLevel5 == $level5Answer) {
         // si la reponse est la meme, on affiche une alerte "Bravo, vous avez reussi le niveau 5" et ne pas afficher local host sais:
-        echo "<script>alert('Bravo, vous avez reussi le niveau 5')</script>";
+        echo "<script>alert('Bravo, AZ est la bonne reponse! Vous avez reussi le niveau 5')</script>";
         // on redirige vers le niveau 6
         echo "<script>window.location.href='formulaireNiveau6.php'</script>";
     } else {
@@ -123,10 +123,10 @@ if (isset($_POST['Niveau5send'])) {
         decreaseRemainingLives();
         if (getRemainingLives() <= 0) {
             gameOver("échec");
-            echo "<script>alert('Vous avez perdu')</script>";
+            echo "<script>alert('Il ne vous reste plus de vie! vous avez perdu, commencez une nouvelle partie!')</script>";
             echo "<script>window.location.href='formulaireAccueil.php'</script>";
         } else {
-            echo "<script>alert('Mauvaise reponse, ressayez')</script>";
+            echo "<script>alert('Mauvaise reponse, la bonne reponse est AZ ,ressayez')</script>";
             echo "<script>window.location.href='formulaireNiveau5.php'</script>";
         }
     }
@@ -142,7 +142,7 @@ if (isset($_POST['Niveau6send'])) {
     if ($userAnswerLevel6 == $level6Answer) {
         // si la reponse est la meme, on affiche une alerte "Bravo, vous avez reussi le niveau 6" et ne pas afficher local host sais:
         gameOver("réussite");
-        echo "<script>alert('Bravo, vous avez reussi le dernier niveau!!!! Vous serez redirige a la page d\\'accueil!')</script>";
+        echo "<script>alert('Bravo, vous avez reussi le dernier niveau!!!! le reponse etait bien 1888 100000001,Vous serez redirige a la page d\\'accueil!')</script>";
         // on redirige vers le niveau 7
         echo "<script>window.location.href='formulaireAccueil.php'</script>";
     } else {
@@ -150,10 +150,11 @@ if (isset($_POST['Niveau6send'])) {
         decreaseRemainingLives();
         if (getRemainingLives() <= 0) {
             gameOver("échec");
-            echo "<script>alert('Vous avez perdu')</script>";
+            echo "<script>alert('Il ne vous reste plus de vie! vous avez perdu, commencez une nouvelle partie!')</script>";
             echo "<script>window.location.href='formulaireAccueil.php'</script>";
         } else {
-            echo "<script>alert('Mauvaise reponse, ressayez')</script>";
+
+            echo "<script>alert('Mauvaise reponse, la bonne reponse est : 1888 100000001 ,ressayez')</script>";
             echo "<script>window.location.href='formulaireNiveau6.php'</script>";
         }
     }
@@ -163,7 +164,7 @@ if (isset($_POST['Niveau6send'])) {
 if (isset($_POST['arreterJeux'])) {
     gameOver("incomplet");
     echo "<script>alert('Vous avez interompu le jeux. Fin de la partie.')</script>";
-    echo "<script>window.location.href='index.php'</script>";
+    echo "<script>window.location.href='formulaireAccueil.php'</script>";
 }
 
 // deconnection 

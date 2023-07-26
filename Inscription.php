@@ -1,5 +1,7 @@
 <?php
+
 $name = $lname = $username= $password = $cpassword = "";
+
 $name_err = $lname_err = $username_err= $password_err =  $cpassword_err = "";
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -49,6 +51,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $cpassword = $input_cpassword;
   }
 
+
   if(trim($input_password) != trim($input_cpassword)|| trim($input_cpassword) != trim($input_password)){
     $cpassword_err = "Passwords do not match.";
   }
@@ -72,6 +75,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         echo "Something went wrong. Please try again later.";
       }
     }
+
     mysqli_stmt_close($stmt);
   }
+
+
+
 }

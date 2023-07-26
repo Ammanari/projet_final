@@ -24,12 +24,16 @@ function executeQuery($sqlString)
     if (($result === true)) { // if i put == instead of ===, it will not work because the result is an object and not a boolean value.
         return;
     }
-    return $result->fetch_assoc();
+
+    return $result->fetch_assoc(); // get the result from the query and returns it.
+    // assoc : associative array (key-value pair)
+
 }
 
 // get the number of lives left
 function getRemainingLives()
 {
+
     return $_SESSION['lives'];
 }
 
@@ -40,6 +44,7 @@ function setRemainingLives($lives)
 
 function decreaseRemainingLives()
 {
+
     $_SESSION['lives']--;
 }
 
@@ -48,10 +53,6 @@ function gameOver($result)
     $livesUsed = 6 - getRemainingLives();
     $registrationOrder = $_SESSION['registrationOrder'];
     executeQuery("INSERT INTO score SET scoreTime = NOW(), result='$result', livesUsed=$livesUsed, registrationOrder = $registrationOrder");
-    setRemainingLives(6);
-    if($result != "incomplet") {
-        session_destroy();
-    }
 }
 
 // get the username for display
@@ -61,45 +62,4 @@ function getUserName()
     $sql = "SELECT userName FROM player WHERE registrationOrder = $registrationOrder LIMIT 1";
     $result = executeQuery($sql);
     return $result['userName'];
-}
-
-function getScoreHistory()
-{
-    global $conn;
-    $registrationOrder = $_SESSION['registrationOrder'];
-    $sql = "SELECT result, livesUsed, scoreTime FROM score WHERE registrationOrder = $registrationOrder ORDER BY scoreTime DESC";
-    $result = $conn->query($sql);
-
-    if (!$result) {
-        die("Error executing query: " . $conn->error);
-    }
-    $scores = [];
-    while ($row = $result->fetch_assoc()) {
-        $score = [
-            'result' => $row['result'],
-            'livesUsed' => $row['livesUsed'],
-            'scoreTime' => $row['scoreTime']
-        ];
-        $scores[] = $score;
-    }
-    return $scores;
-}
-
-function getTimeElapsed() {
-    if (isset($_SESSION['startTime'])) {
-        $startTime = $_SESSION['startTime'];
-        var_dump($startTime);
-        $currentTime = time();
-        var_dump($currentTime);
-        $timeElapsed = $currentTime - $startTime;
-        var_dump($timeElapsed);
-
-        $hours = floor($timeElapsed / 3600);
-        $minutes = floor(($timeElapsed % 3600) / 60);
-        $seconds = $timeElapsed % 60;
-
-        return sprintf("%02d:%02d:%02d", $hours, $minutes, $seconds);
-    } else {
-        return '';
-    }
 }

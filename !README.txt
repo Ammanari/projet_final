@@ -1,7 +1,7 @@
 *************************************IMPORTANT*****************************************
 *										      *
 *                                                                                     *
-*             LA PAGE D'ACCUEIL DU JEU EST LE FICHIER: index.php                      *
+*             LA PAGE D'ACCUEIL DU JEU EST LE FICHIER: connectionLogIn.php            *
 *                                                                                     *
 *                                                                                     *
 *                                                                                     *
@@ -12,6 +12,7 @@
 1. NOM DES DEVELOPPEURS ET LA CONTRIBUTION DE CHACUN:
 
 Martin Aubry
+
 
 -Création de comptes utilisateur ou inscription (Sign-Up). 
 -Validation en temps réel des informations saisies par 
@@ -32,9 +33,7 @@ utilisateur avec AJAX.
 -Déconnexion à un compte utilisateur connecté (Sign-Out et Time-Out)."
 -Création de la structure pour créer et échanger des données avec la base de données
 
-
 Alex Gelfand
-
 -Création de la structure pour créer et échanger des données 
  avec la base de données
 -Création et mise en place du compte GitHub
@@ -45,15 +44,14 @@ Alex Gelfand
  d’interactivité et d’attraction additionnelles."
 
 
-Alexandre Dawood
 
+Alexandre Dawood
 -Connexion à un compte utilisateur existant (Sign-In).
 -Déconnexion à un compte utilisateur connecté (Sign-Out et Time-Out)."
 -Création de la structure pour créer et échanger des données avec la base de données
 -Modification du mot de passe d’un compte utilisateur existant. 
 -Affichage personnalisé des fonctionnalités et ajout de fonctionnalités 
  d’interactivité et d’attraction additionnelles."
-
 
 ***************************************************************************************
 
@@ -67,8 +65,8 @@ Inscription et Connexion d'Utilisateur : Le site permet aux utilisateurs de
 créer un compte et de s'authentifier. Les informations des utilisateurs sont 
 stockées de manière sécurisée dans une base de données MySQL.
 
-Gestion de l'Historique : Les utilisateurs peuvent voir leur historique de 
-incluant les scores et les statistiques de chaque partie.
+Gestion de l'Historique : Les utilisateurs peuvent voir leur historique 
+de scores et les statistiques de chacune de leur partie.
 
 Fonctionnalité d'Annulation : Les utilisateurs ont la possibilité d'annuler 
 une partie de jeu en cours.
@@ -171,5 +169,4 @@ pendant une partie en cours, le résultat est incomplet.
 
 Partie réussie : Lorsque le joueur parvient à terminer tous les 
 niveaux sans épuiser toutes ses vies, le résultat est une réussite.
-
 ***************************************************************************************
